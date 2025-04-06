@@ -1,31 +1,31 @@
-psql -U postgres
+psql *U postgres
 CREATE DATABASE SRUJAN;
-# 🧠 SQL Dashboard App
 
-A simple, lightweight web app built with **Node.js**, **Express**, **EJS**, and **PostgreSQL** that allows users to:
-- View all tables in a connected database
-- Run custom SQL queries
-- Display query results in a clean table format
+HOSPITAL MANAGEMENT SYSTEM BY SRUJAN M PADMASHALI
 
----
+A simple, lightweight web app built with Node.js, Express, EJS, and PostgreSQL that allows users to:
+* View all tables in a connected database
+* Run custom SQL queries
+* Display query results in a clean table format
 
-## 🚀 Features
 
-- 🔎 View all available PostgreSQL tables
-- ✍️ Input and execute custom SQL queries
-- 📊 Display results in a responsive HTML table
-- 🎨 Clean and modern UI styled with custom CSS
+🚀 Features
 
----
+* 🔎 View all available PostgreSQL tables
+* ✍️ Input and execute custom SQL queries
+* 📊 Display results in a responsive HTML table
+* 🎨 Clean and modern UI styled with custom CSS
 
-## 🛠️ Tech Stack
 
-- **Backend:** Node.js + Express
-- **Database:** PostgreSQL (via `pg` package)
-- **Templating:** EJS
-- **Styling:** Custom CSS
 
----
+🛠️ Tech Stack
 
-## 📂 Folder Structure
+* Backend: Node.js + Express
+* Database: PostgreSQL (via `pg` package)
+* Templating: EJS
+* Styling: Custom CSS
+
+
+
+
 
