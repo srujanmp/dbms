@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Insert Data</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Insert Data into Doctors Table</h2>
+    <form method="POST" action="/insert-doctor">
+      <input type="text" name="firstName" placeholder="First Name" required>
+      <input type="text" name="lastName" placeholder="Last Name" required>
+      <input type="text" name="specialization" placeholder="Specialization" required>
+      <button type="submit">Insert Doctor</button>
+    </form>
+
+    <hr>
+
+    <h2>Insert Data into Patients Table</h2>
+    <form method="POST" action="/insert-patient">
+      <input type="text" name="firstName" placeholder="First Name" required>
+      <input type="text" name="lastName" placeholder="Last Name" required>
+      <input type="date" name="dateOfBirth" required>
+      <select name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <button type="submit">Insert Patient</button>
+    </form>
+
+    <hr>
+
+    <h2>Insert Data into Appointments Table</h2>
+    <form method="POST" action="/insert-appointment">
+      <input type="number" name="patientId" placeholder="Patient ID" required>
+      <input type="number" name="doctorId" placeholder="Doctor ID" required>
+      <input type="datetime-local" name="appointmentDate" required>
+      <select name="status" required>
+        <option value="Scheduled">Scheduled</option>
+        <option value="Completed">Completed</option>
+        <option value="Canceled">Canceled</option>
+      </select>
+      <button type="submit">Insert Appointment</button>
+    </form>
+
+    <hr>
+
+    <h2>Insert Data into Prescriptions Table</h2>
+    <form method="POST" action="/insert-prescription">
+      <input type="number" name="appointmentId" placeholder="Appointment ID" required>
+      <input type="text" name="medication" placeholder="Medication" required>
+      <input type="text" name="dosage" placeholder="Dosage" required>
+      <button type="submit">Insert Prescription</button>
+    </form>
+
+    <hr>
+
+    <h2>Insert Data into Billing Table</h2>
+    <form method="POST" action="/insert-bill">
+      <input type="number" name="patientId" placeholder="Patient ID" required>
+      <input type="number" step="0.01" name="amount" placeholder="Amount" required>
+      <select name="paymentStatus" required>
+        <option value="Pending">Pending</option>
+        <option value="Paid">Paid</option>
+      </select>
+      <button type="submit">Insert Bill</button>
+    </form>
+  </div>
+</body>
+</html>

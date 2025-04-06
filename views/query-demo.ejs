@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Predefined SQL Queries</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Predefined SQL Queries</h2>
+
+    <form method="POST" action="/run-query">
+      <input type="hidden" name="query" value="SELECT * FROM Doctors WHERE Specialization = 'Cardiologist';">
+      <button type="submit">Get all Cardiologists</button>
+    </form>
+
+    <form method="POST" action="/run-query">
+      <input type="hidden" name="query" value="SELECT * FROM Patients WHERE DateOfBirth > '1995-12-31';">
+      <button type="submit">Get patients born after 1995</button>
+    </form>
+
+    <form method="POST" action="/run-query">
+      <input type="hidden" name="query" value="SELECT * FROM Appointments WHERE Status = 'Scheduled';">
+      <button type="submit">Get scheduled appointments</button>
+    </form>
+
+    <form method="POST" action="/run-query">
+      <input type="hidden" name="query" value="SELECT p.FirstName, p.LastName FROM Patients p JOIN Appointments a ON p.PatientID = a.PatientID JOIN Doctors d ON a.DoctorID = d.DoctorID WHERE a.Status = 'Completed' AND d.Specialization = 'Neurologist';">
+      <button type="submit">Patients with completed appointments with a Neurologist</button>
+    </form>
+
+    <form method="POST" action="/run-query">
+      <input type="hidden" name="query" value="SELECT d.FirstName, d.LastName, COUNT(a.AppointmentID) AS TotalAppointments FROM Doctors d LEFT JOIN Appointments a ON d.DoctorID = a.DoctorID GROUP BY d.DoctorID;">
+      <button type="submit">List doctors and their number of appointments</button>
+    </form>
+
+    <form method="POST" action="/run-query">
+      <input type="hidden" name="query" value="SELECT pr.Medication, pr.Dosage FROM Prescriptions pr JOIN Appointments ap ON pr.AppointmentID = ap.AppointmentID WHERE ap.Status = 'Completed';">
+      <button type="submit">Get medication and dosage for completed appointments</button>
+    </form>
+
+    <form method="POST" action="/run-query">
+      <input type="hidden" name="query" value="SELECT DISTINCT p.FirstName, p.LastName FROM Patients p JOIN Appointments a ON p.PatientID = a.PatientID JOIN Doctors d ON a.DoctorID = d.DoctorID JOIN Billing b ON p.PatientID = b.PatientID WHERE b.PaymentStatus = 'Pending' AND d.Specialization = 'Pediatrician';">
+      <button type="submit">Patients with pending bills and Pediatrician appointments</button>
+    </form>
+  </div>
+</body>
+</html>

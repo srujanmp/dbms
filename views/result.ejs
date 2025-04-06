@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Query Result</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Query Result</h2>
+
+    <% if (rows.length === 0) { %>
+      <p>No results found.</p>
+    <% } else { %>
+      <table>
+        <thead>
+          <tr>
+            <% Object.keys(rows[0]).forEach(col => { %>
+              <th><%= col %></th>
+            <% }) %>
+          </tr>
+        </thead>
+        <tbody>
+          <% rows.forEach(row => { %>
+            <tr>
+              <% Object.values(row).forEach(val => { %>
+                <td><%= val %></td>
+              <% }) %>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+
+    <a href="/tables" class="button">⬅ Back</a>
+  </div>
+</body>
+</html>
